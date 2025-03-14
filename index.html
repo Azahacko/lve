@@ -3,25 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pour toi, mon amour ❤️</title>
+    <title>Message d'Amour ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>❤️ <span id="nameDisplay"></span>, écoute ce que mon cœur veut te dire ❤️</h1>
-
+    <!-- Section de saisie du prénom -->
     <div class="input-container">
-        <input type="text" id="nameInput" placeholder="Entre son prénom ici...">
+        <h2>Entrez le prénom de votre bien-aimé(e) 💖</h2>
+        <input type="text" id="nameInput" placeholder="Son prénom ici...">
         <button onclick="setName()">Valider</button>
     </div>
 
+    <!-- Contenu principal (caché au début) -->
     <div id="content" class="hidden">
+        <h1>❤️ <span id="nameDisplay"></span>, écoute ce que mon cœur veut te dire ❤️</h1>
         <button id="btn">Click👆 pour ressentir mon amour</button>
         <p id="message"></p>
+
+        <!-- Zone pour le lien à partager -->
+        <div id="shareLink"></div>
+        <button id="sendButton" class="hidden" onclick="copyLink()">💌 Envoyer à mon cœur ❤️</button>
+        <p id="copyMessage" class="hidden">Lien copié ! Tu peux maintenant l'envoyer. 💖</p>
+
+        <!-- Bouton pour personnaliser un autre message -->
+        <button id="resetButton" class="hidden" onclick="resetForm()">💖 Personnaliser un autre message</button>
     </div>
 
-    <footer>Exprimez votre amour avec des messages uniques | © 2025 BL@ckdeVolPER</footer>
-
-
+    <footer>Exprimez votre amour avec des messages uniques | © 2025 AZAHACK-DEVELOPP</footer>
 
     <script src="script.js"></script>
 </body>
