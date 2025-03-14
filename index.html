@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <!-- Section de saisie du prénom -->
     <div class="input-container">
         <h2>Entrez le prénom de votre bien-aimé(e) 💖</h2>
@@ -21,9 +22,15 @@
         <p id="message"></p>
 
         <!-- Zone pour le lien à partager -->
-        <div id="shareLink"></div>
-        <button id="sendButton" class="hidden" onclick="copyLink()">💌 Envoyer à mon cœur ❤️</button>
-        <p id="copyMessage" class="hidden">Lien copié ! Tu peux maintenant l'envoyer. 💖</p>
+        <div id="shareLink" class="hidden">
+            <p>Partage ce lien avec <b id="nameInLink"></b> :</p>
+            <input type="text" id="linkInput" readonly onclick="this.select()">
+            <button id="copyButton" onclick="copyLink()">📋 Copier le lien</button>
+            <p id="copyMessage" class="hidden">Lien copié ! 💖</p>
+        </div>
+
+        <!-- Bouton pour envoyer le message -->
+        <button id="sendButton" class="hidden">💌 Envoyer à mon cœur ❤️</button>
 
         <!-- Bouton pour personnaliser un autre message -->
         <button id="resetButton" class="hidden" onclick="resetForm()">💖 Personnaliser un autre message</button>
@@ -32,5 +39,6 @@
     <footer>Exprimez votre amour avec des messages uniques | © 2025 AZAHACK-DEVELOPP</footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>
