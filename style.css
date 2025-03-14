@@ -1,6 +1,56 @@
+/* Style général */
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+    background-color: #ffe6ea;
+    color: #333;
+}
+
+/* Conteneur de l'input */
+.input-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin-top: 50px;
+}
+
+/* Input et bouton de validation */
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ff4d6d;
+    border-radius: 5px;
+    outline: none;
+    width: 200px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff4d6d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ff1f4d;
+}
+
 /* Masquer les éléments par défaut */
 .hidden {
     display: none;
+}
+
+/* Conteneur principal après validation */
+#content {
+    margin-top: 30px;
 }
 
 /* Style du message */
@@ -13,20 +63,50 @@
     transition: opacity 0.5s ease-in-out;
 }
 
-/* Style du bouton de réinitialisation */
+/* Boutons spécifiques */
+#sendButton {
+    background-color: #008CBA;
+}
+
+#sendButton:hover {
+    background-color: #0073a4;
+}
+
 #resetButton {
-    padding: 10px 20px;
-    font-size: 18px;
     background-color: #ffcc00;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
 }
 
 #resetButton:hover {
     background-color: #ff9900;
+}
+
+/* Zone de partage */
+#shareLink {
+    margin-top: 15px;
+}
+
+#shareLink input {
+    width: 80%;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+}
+
+/* Style du bouton Copier */
+#copyButton {
+    background-color: #4CAF50;
+    margin-top: 10px;
+}
+
+#copyButton:hover {
+    background-color: #3e8e41;
+}
+
+/* Message de confirmation */
+#copyMessage {
+    color: #4CAF50;
+    font-size: 14px;
+    margin-top: 5px;
 }
 
 /* Footer toujours en bas */
