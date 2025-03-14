@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let index = 0;
     let urlParams = new URLSearchParams(window.location.search);
-    let name = urlParams.get("name") || ""; 
+    let name = urlParams.get("name");
 
     function updateMessage() {
         let message = texts[index].replace("{name}", name);
@@ -28,16 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
     function showContent() {
         document.getElementById("nameDisplay").innerText = name;
         document.getElementById("content").classList.remove("hidden");
-        document.getElementById("shareLink").classList.remove("hidden");
         updateMessage();
     }
 
     if (name) {
-        // Si un nom est présent dans l'URL, afficher directement les messages
-        showContent();
+        // Si un nom est présent dans l'URL, cacher l'input et afficher les messages
         document.querySelector(".input-container").style.display = "none";
+        showContent();
     } else {
-        // Sinon, attendre que l'utilisateur saisisse un prénom
+        // Si aucun nom n'est défini, cacher le contenu
         document.getElementById("content").classList.add("hidden");
     }
 
@@ -53,8 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
             let shareLink = window.location.origin + window.location.pathname + "?name=" + encodeURIComponent(name);
             document.getElementById("linkInput").value = shareLink;
             document.getElementById("nameInLink").innerText = name;
-            showContent();
+
+            // Cacher l'input et afficher le message
             document.querySelector(".input-container").style.display = "none";
+            showContent();
         }
     };
 
