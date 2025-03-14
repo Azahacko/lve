@@ -1,8 +1,35 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     text-align: center;
     font-family: Arial, sans-serif;
-    margin-top: 50px;
+    background-color: #ffe6eb;
+    flex: 1;
 }
+
+h1 {
+    color: #ff4d6d;
+    font-size: 24px;
+    visibility: hidden; /* Caché au début */
+}
+
+.input-container {
+    margin: 20px 0;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
 button {
     padding: 10px 20px;
     font-size: 18px;
@@ -11,12 +38,40 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-left: 5px;
 }
+
 button:hover {
     background-color: #ff1f4d;
 }
+
+#message {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff4d6d;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Assurer que le contenu occupe l'espace dispo */
+#content {
+    flex: 1;
+}
+
+/* Footer bien collé en bas */
 footer {
-    margin-top: 50px;
     font-size: 14px;
-    color: #555;
+    color: white;
+    background-color: #ff4d6d;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
