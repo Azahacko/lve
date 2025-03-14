@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
     
     let index = 0;
-    let name = ""; // Pas de nom par défaut
+    let urlParams = new URLSearchParams(window.location.search);
+    let name = urlParams.get("name") || ""; 
 
     function updateMessage() {
         let message = texts[index].replace("{name}", name);
@@ -29,12 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
         updateMessage();
     });
 
-    document.getElementById("nameInput").addEventListener("keypress", function (event) {
-        if (event.key === "Enter") {
-            setName();
-        }
-    });
-
     window.setName = function () {
         let newName = document.getElementById("nameInput").value.trim();
         if (newName !== "") {
@@ -42,10 +37,45 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("nameDisplay").innerText = name;
             updateMessage();
 
+            // Générer un lien avec le prénom
+            let shareLink = window.location.origin + window.location.pathname + "?name=" + encodeURIComponent(name);
+            document.getElementById("shareLink").innerHTML = `<p>Partage ce lien avec <b>${name}</b> :</p><input type="text" value="${shareLink}" readonly onclick="this.select()">`;
+
+            // Afficher les boutons d'envoi et de réinitialisation
+            document.getElementById("sendButton").classList.remove("hidden");
+            document.getElementById("resetButton").classList.remove("hidden");
+
             // Afficher le reste du contenu et cacher l'input après validation
             document.querySelector(".input-container").style.display = "none";
             document.getElementById("content").classList.remove("hidden");
-            document.querySelector("h1").style.visibility = "visible";
         }
     };
+
+    function copyLink() {
+        let linkInput = document.getElementById("shareLink").querySelector("input");
+        if (linkInput) {
+            linkInput.select();
+            document.execCommand("copy");
+            document.getElementById("copyMessage").classList.remove("hidden");
+        }
+    }
+
+    window.resetForm = function () {
+        // Réafficher l'input et masquer les autres éléments
+        document.querySelector(".input-container").style.display = "block";
+        document.getElementById("content").classList.add("hidden");
+        document.getElementById("sendButton").classList.add("hidden");
+        document.getElementById("resetButton").classList.add("hidden");
+        document.getElementById("copyMessage").classList.add("hidden");
+
+        // Réinitialiser le champ de texte
+        document.getElementById("nameInput").value = "";
+    };
+
+    if (name !== "") {
+        document.querySelector(".input-container").style.display = "none";
+        document.getElementById("content").classList.remove("hidden");
+        document.getElementById("nameDisplay").innerText = name;
+        updateMessage();
+    }
 });
