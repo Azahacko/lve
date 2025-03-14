@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pour toi, Françoise ❤️</title>
+    <title>Pour toi, mon amour ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>❤️ Françoise, écoute ce que mon cœur veut te dire ❤️</h1>
-    <button onclick="changeText()">Click👆 pour ressentir mon amour</button>
-    <p id="message"></p>
+    <h1>❤️ <span id="nameDisplay"></span>, écoute ce que mon cœur veut te dire ❤️</h1>
+
+    <div class="input-container">
+        <input type="text" id="nameInput" placeholder="Entre son prénom ici...">
+        <button onclick="setName()">Valider</button>
+    </div>
+
+    <div id="content" class="hidden">
+        <button id="btn">Click👆 pour ressentir mon amour</button>
+        <p id="message"></p>
+    </div>
+
+    <footer>Exprimez votre amour avec des messages uniques | © 2025 BL@ckdeVolPER</footer>
+
+
 
     <script src="script.js"></script>
 </body>
