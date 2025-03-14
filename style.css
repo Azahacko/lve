@@ -1,50 +1,9 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+/* Masquer les éléments par défaut */
+.hidden {
+    display: none;
 }
 
-body {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    background-color: #ffe6eb;
-    flex: 1;
-}
-
-h1 {
-    color: #ff4d6d;
-    font-size: 24px;
-    visibility: hidden; /* Caché au début */
-}
-
-.input-container {
-    margin: 20px 0;
-}
-
-input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 200px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #ff4d6d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 5px;
-}
-
-button:hover {
-    background-color: #ff1f4d;
-}
-
+/* Style du message */
 #message {
     font-size: 22px;
     font-weight: bold;
@@ -54,21 +13,28 @@ button:hover {
     transition: opacity 0.5s ease-in-out;
 }
 
-.hidden {
-    display: none;
+/* Style du bouton de réinitialisation */
+#resetButton {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ffcc00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-/* Assurer que le contenu occupe l'espace dispo */
-#content {
-    flex: 1;
+#resetButton:hover {
+    background-color: #ff9900;
 }
 
-/* Footer bien collé en bas */
+/* Footer toujours en bas */
 footer {
     font-size: 14px;
     color: white;
     background-color: #ff4d6d;
-    padding: 10px 0;
+    padding: 10px;
     text-align: center;
     width: 100%;
     position: fixed;
